@@ -1,0 +1,27 @@
+.btn-extra-class
+{
+    background-color:black;
+}
+
+.one {
+    color: green;
+}
+.two {
+    font-size: 20px;
+}
+.three {
+    color: red;
+}
+.four {
+    font-size: 15px;
+}
+
+.green {
+    color: green;
+}
+.blue {
+    color: blue;
+}
+.red{
+    color: red;
+}

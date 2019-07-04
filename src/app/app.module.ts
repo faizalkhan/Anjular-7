@@ -7,9 +7,14 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.module';
 import { UserComponent } from './user/user.component';
-
 import { Approute} from './app.routes';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsComponent } from './forms/forms.component';
+import { CamelCasePipe } from './camel-case.pipe';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+ 
  
 @NgModule({
   declarations: [
@@ -17,14 +22,20 @@ import { RouterModule } from '@angular/router';
     SidebarComponent,
     TopBarComponent,
     DashboardComponent,
-    UserComponent
+    UserComponent,
+    FormsComponent,
+    CamelCasePipe,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(Approute)
+    RouterModule.forRoot(Approute),
+    ReactiveFormsModule
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

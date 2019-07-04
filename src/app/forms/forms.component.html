@@ -1,0 +1,110 @@
+<p>
+ {{appname}}
+</p>
+
+<button type="button"  [disabled] = "btnclick" (click)="handleme()">Click Me!</button>
+
+<button type="button"  [ngClass]= "'btn btn-primary'"> ng Class</button>
+
+<button type="button"  class="btn"  [class.btn-primary] ="false">Button</button>
+
+
+<button type="button" [style.background-color] ="'orange'">Inline style</button>
+
+
+<button type="button" [ngStyle]="{'background-color' :'green', 'font-size' : '24px'}">Button</button>
+
+<button type="button" [ngClass]="collectstyle()"> ng style collectionn Button</button>
+
+<button type="button"  (click)="toggleclass()">   toggleStyle    </button>
+
+<button type="button"  [ngClass]= "collectstyle()"> Method Style </button>
+
+<p [ngStyle] = "myStyles"> myStyles in property </p>
+
+<p [ngStyle] = "setmyStyles()"> set Styles in property </p>
+
+<p [ngClass]= "'one'"> One </p>
+
+<p [ngClass]= "'one two'"> ng class in string </p>
+
+<p [ngClass]= "['one', 'two']"> ng class in array </p>
+
+<p [ngClass]= "{'one' : true, 'two': false }"> ng class in object </p>
+
+<div [ngClass]="getclasses('nightModes')"> condition </div>
+
+<ul *ngFor = "let peoples of people">
+
+    <!--<li [ngStyle]= "{ 'background-color' : peoples.country == 'UK' ? 'green' : 'blue'}">{{ peoples.name}}
+         {{peoples.country}}</li>
+
+         <li [ngClass] = "{
+             'text-success': peoples.country == 'UK',
+             'text-warning' : peoples.country == 'US'
+            
+            
+            }"> {{ peoples.name}}
+                {{peoples.country}}</li>
+
+
+           <li [ngClass] = "getclasses()">   {{peoples.name}} {{peoples.country  }} </li> -->
+
+</ul>
+
+
+<div *ngIf="isValid">
+
+  Data is available
+
+</div>
+
+
+<div *ngIf="!isValid">
+
+    Data is available
+  
+  </div>
+
+<div *ngFor= "let id of ids">
+
+<div *ngIf = "id % 2 ===0" [ngClass] = "'green'" > Even Number </div>
+<div *ngIf = "id % 2 ===1" > Odd Number </div>
+</div>
+
+
+<div *ngIf="myNumEnum.TWO > 1">
+    {{myNumEnum.TWO}} is greater than 1.
+ </div>
+ <div *ngIf="myNumEnum.THREE < 2">
+    {{myNumEnum.TWO}} is less than 2.
+ </div>
+
+
+ <div *ngIf="emp1">
+   {{emp1.id}}    {{emp1.name}}
+ </div>
+
+ <div *ngIf="emp2">
+    {{emp2.id}} {{emp2.name}}
+  </div>
+
+  <h2 *ngIf = "DisplayName; else elseBlock"> Hello </h2>
+
+  <ng-template #elseBlock>  
+  <h2>
+
+    
+  </h2>
+
+</ng-template>
+
+<div *ngIf="DisplayNames; then thenBlock; else elseBlocks"> </div>
+<ng-template #thenBlock>
+  <h2> hello is shown </h2>
+</ng-template>
+<ng-template #elseBlocks>
+    <h2> hello is hidden </h2>
+  </ng-template>
+
+  {{ 'Foo Bar Baz' | camelCase }}
